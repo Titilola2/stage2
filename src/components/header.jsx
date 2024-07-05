@@ -14,16 +14,16 @@ const Header = () => {
 
 
       <div className="flex flex-row justify-between w-[349px] h-[24px] gap-[40px] font-inter">
-      <div className="h-[24px] text-[14px] text-[#141718] font-500">
+      <div className="h-[24px] text-[14px] text-[#141718] font-[500]">
         Home
       </div>
-      <div className="h-[24px] text-[14px] text-[#141718] font-500">
+      <div className="h-[24px] text-[14px] text-[#141718] font-[500]">
       About Us
       </div>
-      <div className="h-[24px] text-[14px] text-[#141718] font-500">
+      <div className="h-[24px] text-[14px] text-[#141718] font-[500]">
       Product
       </div>
-      <div className="h-[24px] text-[14px] text-[#141718] font-500">
+      <div className="h-[24px] text-[14px] text-[#141718] font-[500]">
       Contact Us
       </div>
       </div>
@@ -33,7 +33,7 @@ const Header = () => {
         <MagnifyingGlassIcon className="h-[24px] w-[24px] text-[#092C4C]" />
         <UserCircleIcon className="h-[20px] w-[24spx] text-[#092C4C]" />
         <div className=' h-[28px]'>
-        <ShoppingCartIcon className="h-[24px] w-[24px] text-[#092C4C]" />
+        <ShoppingCartIcon className="h-[24px] w-[24px] text-[#141718]" />
         </div>
       </div>
       
@@ -49,7 +49,7 @@ const Header = () => {
    
     <div className=" w-[102px] h-[24px] flex flex-row">
       <div className='w-[24px] h-[24px]'>
-        <Bars3Icon className="h-[20px] w-[20px] p-[1.5px]  text-[#141718]" />
+        <Bars3Icon className="h-[20px] w-[20px] p-[1.5px] mt-[2px] text-[#141718]" />
       </div>
     <div className='w-[81px] text-[16px] font-medium font-poppins'>
       ECHOMAX 
