@@ -46,7 +46,7 @@ const Body = () => {
   
   
   <div className="flex flex-row gap-4 mt-2">
-  <div className="w-1/4 bg-[#ECECEC] flex flex-col m ">
+  <div className="w-1/4 bg-white flex flex-col m ">
  <div className='filter flex flex-row mb-8'>
  <FiFilter className="text-gray-600 h-6 p-[4px] w-6" />
  <div className=' font-inter text-[20px] px-[4px] font-[600]'>Filter</div>
@@ -104,7 +104,7 @@ const Body = () => {
 </div>
 
 
-<div className="w-3/4 bg-[#AAAAAA]  flex flex-col ">
+<div className="w-3/4 bg-white  flex flex-col ">
 <div className='filter flex flex-row mb-8 justify-between'>
  <div className=' font-inter text-[20px] px-[4px] font-[600]'>Filter</div>
  <div className=' font-inter text-[20px] px-[4px] font-[600] pr-8 w-[296px] justify-between flex flex-row'>
