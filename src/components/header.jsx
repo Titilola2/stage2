@@ -1,9 +1,18 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MagnifyingGlassIcon, UserCircleIcon, ShoppingCartIcon, Bars3Icon } from '@heroicons/react/24/outline';
 
 
+
+
+ 
+   
+
+
 const Header = () => {
+ 
+
+  
   return (
     <>
     {  /* large screen */  }
@@ -14,16 +23,16 @@ const Header = () => {
 
 
       <div className="flex flex-row justify-between w-[349px] h-[24px] gap-[40px] font-inter">
-      <div className="h-[24px] text-[14px] text-[#141718] font-[500]">
+      <div className="h-[24px] text-[14px] text-[#6C7275] font-[500]">
         Home
       </div>
-      <div className="h-[24px] text-[14px] text-[#141718] font-[500]">
+      <div className="h-[24px] text-[14px] text-[#6C7275] font-[500]">
       About Us
       </div>
       <div className="h-[24px] text-[14px] text-[#141718] font-[500]">
       Product
       </div>
-      <div className="h-[24px] text-[14px] text-[#141718] font-[500]">
+      <div className="h-[24px] text-[14px] text-[#6C7275] font-[500]">
       Contact Us
       </div>
       </div>
@@ -39,9 +48,10 @@ const Header = () => {
       
       </div>
 
+     
+      
 
-
-    
+      
 
 
    { /* mobile screen */  }

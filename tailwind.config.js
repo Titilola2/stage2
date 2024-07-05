@@ -7,11 +7,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: ['checked'],
       fontFamily: {
+       
         'poppins': ['Poppins', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
       },
     },
   },
+  variants: {
+    extend: {
+      backgroundColor: ['checked'],
+    },
+  },
   plugins: [],
 }
+
+
+
+
