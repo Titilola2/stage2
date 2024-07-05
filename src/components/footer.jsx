@@ -47,15 +47,15 @@ const Footer = () => {
       </div>
 
 
-      <div className="flex flex-row justify-between w-[120px] h-[24px] gap-[40px]  text-[#FEFEFE] ">
-      <div className="h-[22px] text-[14px]  font-400">
-      <FaInstagram className="" />
+      <div className="flex flex-row justify-between w-[120px] h-[24px] gap-[4px]  text-[#FEFEFE] ">
+      <div className="  text-[14px]   font-400">
+      <FaInstagram className="w-[24px]" />
       </div>
-      <div className="h-[22px] text-[14px]  font-400">
-      <FaFacebook className="" />
+      <div className=" text-[14px]  font-400">
+      <FaFacebook className="w-[24px]" />
       </div>
-      <div className="h-[22px] text-[14px]  font-400">
-      <FaYoutube className="" />
+      <div className=" text-[14px]  font-400">
+      <FaYoutube className="w-[24px]" />
       </div>
       </div>
     </div>
@@ -102,7 +102,7 @@ const Footer = () => {
   
       <FaInstagram className="px-[4px] w-[24px] h-[24px]" />
       <FaFacebook className="px-[4px] w-[24px] h-[24px]" />
-      <FaYoutube className="px-[4px] w-[24px] h-[24px]" />
+      <FaYoutube className="px-[4px] w-[30px] h-[24px]" />
           
    </div>
    <div className='h-[68px]  py-[4px] justify-center items-center flex flex-col'>
@@ -125,12 +125,7 @@ const Footer = () => {
     
 
 
-   { /* mobile screen */  }
-   <div className=" md:hidden flex flex-column  bg-[#232627] ">
-   <div className=''></div>
-   <div className=''></div>
-   <div className=''></div>
-    </div>
+  
 
    </div>
   );

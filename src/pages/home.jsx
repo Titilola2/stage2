@@ -11,6 +11,7 @@ const Home = () => {
    <div className="  gap-2 flex flex-col  ">
    <div className="">
    <Header />
+   <Body />
 <Footer />
    </div>
 

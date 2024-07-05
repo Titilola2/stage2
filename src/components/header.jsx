@@ -30,9 +30,9 @@ const Header = () => {
 
 
       <div className="flex flex-row justify-between w-[130px] h-[28px] gap-[16px]">
-        <MagnifyingGlassIcon className="h-[24px] w-[24px] text-gray-600" />
-        <UserCircleIcon className="h-[20px] w-[20px] text-gray-600" />
-        <div className='w-[50px] h-[28px]'>
+        <MagnifyingGlassIcon className="h-[24px] w-[24px] text-[#092C4C]" />
+        <UserCircleIcon className="h-[20px] w-[24spx] text-[#092C4C]" />
+        <div className=' h-[28px]'>
         <ShoppingCartIcon className="h-[24px] w-[24px] text-[#092C4C]" />
         </div>
       </div>
