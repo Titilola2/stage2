@@ -49,7 +49,7 @@ const Header = () => {
    
     <div className=" w-[102px] h-[24px] flex flex-row">
       <div className='w-[24px] h-[24px]'>
-        <Bars3Icon className="h-[20px] w-[20px] p-[1.5px] text-[#141718]" />
+        <Bars3Icon className="h-[20px] w-[20px] p-[1.5px]  text-[#141718]" />
       </div>
     <div className='w-[81px] text-[16px] font-medium font-poppins'>
       ECHOMAX 
