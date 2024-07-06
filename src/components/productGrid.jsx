@@ -44,7 +44,7 @@ const ProductGrid = () => {
       ))}
       
     </div>
-    <div className='justify-center items-center'>
+    <div className='justify-center items-center my-8'>
     <button
       className=" w-[163px] h-[40px] border-[#141718] border-[1px] rounded-[8px] text-[#141718] text-center "
     >
