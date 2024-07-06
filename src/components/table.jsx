@@ -10,7 +10,7 @@ const Table = () => {
   return (
     <div className="flex flex-col">
       <div className="w-full overflow-hidden rounded-md shadow-sm">
-        <div className="w-full border-b-[1px] border-[6C7275]">
+        <div className="w-full border-b-[1px] border-[#6C7275]">
           <div className="flex px-4 py-2 text-left text-[16px] font-[600] font-inter capitalize">
             <div className="w-1/3">Products</div>
             <div className="w-1/3 text-center">Quantity</div>
