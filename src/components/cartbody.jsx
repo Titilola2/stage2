@@ -5,6 +5,20 @@ import CheckoutSummary from './checkoutsummary';
 
 const Cartbody = () => {
  
+  
+  const [activeTab, setActiveTab] = useState('tab1');
+
+  const tabs = [
+    { label: 'Shopping Cart', number: '1', content: <div></div> },
+    { label: 'Checkout details', number: '2', content: <div></div> },
+    { label: 'Order complete', number: '3', content: <div></div> },
+
+  ];
+
+  const handleClick = (label) => {
+    setActiveTab(label);
+  };
+
 
   
   return (
@@ -14,9 +28,30 @@ const Cartbody = () => {
     <div className='w-[832px] h-[166px] gap-[40px]'>
         <div className='font poppins text-[54px] text-center font-[500] text-[#000000]'>Cart</div>
         <div className=''>
-         
+        <div className="top flex flex-col w-3/5 justify-center items-center mx-36 ">
+        <div className="flex items-center text-center border-b border-gray-200 font-inter text-[16px] font-[600] justify-around">
+          {tabs.map((tab) => (
+            <button
+              key={tab.label}
+              className={`px-3  py-4 text-[#B1B5C3] hover:text-gray-900  mt-2 ${
+                activeTab === tab.label ? 'border-b-2 border-black  text-[#23262F]' : ''
+              }`}
+              onClick={() => handleClick(tab.label)}
+            ><span className={  "bg-[#23262F] text-white rounded-full px-2 py-1 text-xs font-bold"}>{tab.number}</span>
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        <div className="p-4 ">
+          {tabs.find((tab) => tab.label === activeTab)?.content}
+        </div>
+      </div>
+               
         </div>
     </div>
+
+
+
 
     <div className='w-[771px] h-[1120px] flex flex-col'>
         <div className='h-[543px] py-[80px] gap-[64px] flex flex-row'>
