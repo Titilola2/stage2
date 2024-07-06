@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CheckoutSummary = ({ subtotal = 0 }) => {
+const Cartsummary = ({ subtotal = 0 }) => {
   return (
     <div className="bg-white flex flex-col border-gray-400 p-[24px] border-[1px] rounded-[6px]">
       <h3 className="text-[20px]  font-semibold mb-2">Order Summary</h3>
@@ -35,4 +35,4 @@ const CheckoutSummary = ({ subtotal = 0 }) => {
   );
 };
 
-export default CheckoutSummary;
+export default Cartsummary;
