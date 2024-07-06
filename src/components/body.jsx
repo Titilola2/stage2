@@ -1,9 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { FiFilter } from 'react-icons/fi';
-import headset from '../assets/1st-headset.svg';
-import StarRating from './starRating';
-
+import ProductGrid from '../components/productGrid';
+import Mobileproduct from './mobileproduct';
 
 
 
@@ -26,6 +25,7 @@ const Body = () => {
 
 {   /*small screen */}
 <div className=" md:hidden flex flex-col bg-white">
+ 
 </div>    
 
 
@@ -113,116 +113,8 @@ const Body = () => {
  </div>
     </div>
 
- <div className='products  grid grid-cols-3 gap-4 '>
- <div className='w-[228px] h-[433px]  flex flex-col'>
-      <div className="h-4/5">
-      <img src={headset}/>
-      </div>
-      <div className="h-1/5 bg-white flex flex-col"></div>
-      <div className='h-1/3 bg-white'>
-      <div className="">
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-    </div></div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>Echo hx</div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>$549</div>
-   </div>
-   <div className='w-[228px] h-[433px]  flex flex-col'>
-      <div className="h-4/5">
-      <img src={headset}/>
-      </div>
-      <div className="h-1/5 bg-white flex flex-col"></div>
-      <div className='h-1/3 bg-white'>
-      <div className="">
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-    </div></div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>Echo hx</div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>$549</div>
-   </div>
-   <div className='w-[228px] h-[433px]  flex flex-col'>
-      <div className="h-4/5">
-      <img src={headset}/>
-      </div>
-      <div className="h-1/5 bg-white flex flex-col"></div>
-      <div className='h-1/3 bg-white'>
-      <div className="">
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-    </div></div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>Echo hx</div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>$549</div>
-   </div>
-    <div className='w-[228px] h-[433px]  flex flex-col'>
-      <div className="h-4/5">
-      <img src={headset}/>
-      </div>
-      <div className="h-1/5 bg-white flex flex-col"></div>
-      <div className='h-1/3 bg-white'>
-      <div className="">
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-    </div></div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>Echo hx</div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>$549</div>
-   </div>
-   <div className='w-[228px] h-[433px]  flex flex-col'>
-      <div className="h-4/5">
-      <img src={headset}/>
-      </div>
-      <div className="h-1/5 bg-white flex flex-col"></div>
-      <div className='h-1/3 bg-white'>
-      <div className="">
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-    </div></div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>Echo hx</div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>$549</div>
-   </div>
-   <div className='w-[228px] h-[433px]  flex flex-col'>
-      <div className="h-4/5">
-      <img src={headset}/>
-      </div>
-      <div className="h-1/5 bg-white flex flex-col"></div>
-      <div className='h-1/3 bg-white'>
-      <div className="">
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-    </div></div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>Echo hx</div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>$549</div>
-   </div>
-   <div className='w-[228px] h-[433px]  flex flex-col'>
-      <div className="h-4/5">
-      <img src={headset}/>
-      </div>
-      <div className="h-1/5 bg-white flex flex-col"></div>
-      <div className='h-1/3 bg-white'>
-      <div className="">
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-    </div></div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>Echo hx</div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>$549</div>
-   </div>
-   <div className='w-[228px] h-[433px]  flex flex-col'>
-      <div className="h-4/5">
-      <img src={headset}/>
-      </div>
-      <div className="h-1/5 bg-white flex flex-col"></div>
-      <div className='h-1/3 bg-white'>
-      <div className="">
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-    </div></div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>Echo hx</div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>$549</div>
-   </div>
-   <div className='w-[228px] h-[433px]  flex flex-col'>
-      <div className="h-4/5">
-      <img src={headset}/>
-      </div>
-      <div className="h-1/5 bg-white flex flex-col"></div>
-      <div className='h-1/3 bg-white'>
-      <div className="">
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-    </div></div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>Echo hx</div>
-      <div className='h-1/3 bg-white font-inter text-left text-[16px] font-[600]'>$549</div>
-   </div>
-   
+ <div className='products   '>
+<ProductGrid />
  </div>
 
 </div>
@@ -234,9 +126,8 @@ const Body = () => {
 
 
 {   /*small screen */}
-<div className=" md:hidden flex flex-col bg-white pb-[80px]
-">
-
+<div className=" md:hidden flex flex-col bg-white pb-[80px] pl-8">
+<Mobileproduct />
 </div>
 
 

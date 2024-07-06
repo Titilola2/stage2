@@ -1,55 +1,56 @@
 import React, { useState } from 'react';
-import StarRating from './starRating'; // Import StarRating component here
-
+import headset from '../assets/1st-headset.svg';
+import StarRating from './starRating';
 
 const ProductGrid = () => {
-  const [isThreeByThree, setIsThreeByThree] = useState(true);
+  const [gridSize, setGridSize] = useState(3); // Initial grid size (3x3)
 
-  const toggleGridLayout = () => {
-    setIsThreeByThree(!isThreeByThree);
+  const toggleGrid = () => {
+    // Ensure gridSize remains 2 or 3
+    setGridSize((prevGridSize) => (prevGridSize === 3 ? 2 : 3));
   };
 
-  const products = [
-    { id: 1, name: 'Echo hx', price: '$549', image: '../assets/1st-headset.svg', rating: 4 },
-    { id: 2, name: 'Echo hx', price: '$549', image: '../assets/1st-headset.svg', rating: 3 },
-    { id: 3, name: 'Echo hx', price: '$549', image: '../assets/1st-headset.svg', rating: 5 },
-    { id: 4, name: 'Echo hx', price: '$549', image: '../assets/1st-headset.svg', rating: 4 },
-    { id: 5, name: 'Echo hx', price: '$549', image: '../assets/1st-headset.svg', rating: 3 },
-    { id: 6, name: 'Echo hx', price: '$549', image: '../assets/1st-headset.svg', rating: 5 },
-  ];
+  const gridClassName = `products grid grid-cols-${gridSize} gap-2 `;
+  const [rating, setRating] = useState(0);
+
+  const handleRatingChange = (newRating) => {
+    setRating(newRating);
+  };
+
 
   return (
-    <div className="p-4">
-      <button
-        onClick={toggleGridLayout}
-        className="flex items-center justify-center w-10 h-10 text-white bg-blue-500  hover:bg-blue-700 focus:outline-none mb-4"
-      >
-        {isThreeByThree ? (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
-          </svg>
-        ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        )}
-      </button>
+    
 
-      <div className={`products grid gap-2 ${isThreeByThree ? 'grid-cols-3' : 'grid-cols-2'}`}>
-        {products.map((product) => (
-          <div key={product.id} className="w-[228px] h-[433px] flex flex-col bg-white  shadow-md overflow-hidden">
-            <div className="h-4/5">
-              <img src={product.image} alt={product.name} className="object-cover  w-full" />
-            </div>
-            <div className="h-1/5 bg-white"></div>
-            <div className="h-1/3 bg-white flex ">
-              <StarRating rating={product.rating} onRatingChange={(newRating) => console.log(newRating)} />
-            </div>
-            <div className="h-1/3 bg-white font-inter text-left text-[16px] font-semibold px-4">{product.name}</div>
-            <div className="h-1/3 bg-white font-inter text-left text-[16px] font-semibold px-4">{product.price}</div>
+    <div className='flex flex-col'>
+      <button onClick={toggleGrid}>
+        {gridSize === 3 ? 'Show 2x2 Grid' : 'Show 3x3 Grid'}
+      </button>
+    <div className={gridClassName}>
+       
+      {[...Array(9)].map((_, index) => ( // Render 12 product items
+        <div key={index} className="w-[222px] h-[433px] flex flex-col">
+          <div className="h-4/5">
+            <img src={headset} alt="Headset" />
           </div>
-        ))}
-      </div>
+          <div className="h-1/5 bg-white flex flex-col">
+            <div className="">
+              {/* Your StarRating component here */}
+              <StarRating rating={rating} onRatingChange={handleRatingChange} />
+            </div>
+          </div>
+          <div className="h-1/3 bg-white font-inter text-left text-[16px] font-[600]">Echo hx</div>
+          <div className="h-1/3 bg-white font-inter text-left text-[16px] font-[600]">$549</div>
+        </div>
+      ))}
+      
+    </div>
+    <div className='justify-center items-center'>
+    <button
+      className=" w-[163px] h-[40px] border-[#141718] border-[1px] rounded-[8px] text-[#141718] text-center "
+    >
+      Show more
+    </button>
+    </div>
     </div>
   );
 };
