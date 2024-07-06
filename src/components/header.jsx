@@ -41,9 +41,9 @@ const Header = () => {
       <div className="flex flex-row justify-between w-[130px] h-[28px] gap-[16px]">
         <MagnifyingGlassIcon className="h-[24px] w-[24px] text-[#092C4C]" />
         <UserCircleIcon className="h-[20px] w-[24spx] text-[#092C4C]" />
-        <div className=' h-[28px]'>
-        <ShoppingCartIcon className="h-[24px] w-[24px] text-[#141718]" />
-        </div>
+        <a className=' h-[28px]' href='/cart'>
+        <ShoppingCartIcon className="h-[24px] w-[24px] text-[#141718]"  />
+        </a>
       </div>
       
       </div>
@@ -66,9 +66,9 @@ const Header = () => {
     </div>
     </div>
 
-    <div className='w-[50px] h-[28px]'>
+    <a className='w-[50px] h-[28px]' href='/cart'>
         <ShoppingCartIcon className="h-[24px] w-[24px] text-[#092C4C]" />
-        </div>
+        </a>
     </div>
 
    

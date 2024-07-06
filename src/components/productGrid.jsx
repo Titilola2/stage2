@@ -13,6 +13,10 @@ const ProductGrid = () => {
   const gridClassName = `products grid grid-cols-${gridSize} gap-2 `;
   const [rating, setRating] = useState(0);
 
+console.log( gridSize);
+
+
+
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
