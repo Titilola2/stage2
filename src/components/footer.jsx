@@ -6,7 +6,7 @@ const Footer = () => {
   return (
    <div>
   {  /* large screen */  }
-    <div className="hidden md:flex flex-col px-[160px] pb-[32px] pt-[80px] bg-[#232627] h-[249px] gap-[49px] text-[#6C7275]  fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4">
+    <div className="hidden md:flex flex-col px-[160px] pb-[32px] pt-[80px] bg-[#232627] h-[249px] gap-[49px] text-[#6C7275]   bottom-0 left-0 w-full bg-gray-800 text-white p-4">
 
     <div className='h-[32px]   justify-between flex flex-row'>
     <div className="   w-[108px] h-[24px] text-xl font-medium font-poppins text-[#FFFFFF]">
@@ -71,7 +71,7 @@ const Footer = () => {
   
 
       { /* mobile screen */  }
-   <div className=" md:hidden flex flex-col  px-[32px] py-[48px] text-[#FEFEFE] bg-[#232627] w-screen h-[609px]">
+   <div className=" md:hidden flex flex-col  px-[32px] py-[48px] text-[#FEFEFE] bg-[#232627] w-screen h-[609px] fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4">
    
     <div className="  h-[301px] flex flex-col w-auto text-center ">
     <div className=' text-[24px] font-medium font-poppins '>
