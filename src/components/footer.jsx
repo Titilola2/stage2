@@ -6,7 +6,7 @@ const Footer = () => {
   return (
    <div>
   {  /* large screen */  }
-    <div className="hidden md:flex flex-col px-[160px] pb-[32px] pt-[80px] bg-[#232627] h-[249px] gap-[49px] text-[#6C7275] ">
+    <div className="hidden md:flex flex-col px-[160px] pb-[32px] pt-[80px] bg-[#232627] h-[249px] gap-[49px] text-[#6C7275]  fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4">
 
     <div className='h-[32px]   justify-between flex flex-row'>
     <div className="   w-[108px] h-[24px] text-xl font-medium font-poppins text-[#FFFFFF]">
