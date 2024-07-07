@@ -148,7 +148,29 @@ const Body = () => {
 
 {   /*small screen */}
 <div className=" md:hidden flex flex-col bg-white pb-[80px] pl-8">
-<Mobileproduct />
+  <div className='flex flex-col pr-[40px]'>
+ <div className='py-[1px] h-[56px] border-b-t-[1px] border-[#EAEAEA] justify-between flex flex-row'>
+   <div className='flex flex-row'>
+   <TbAdjustmentsHorizontal className="text-[#121212] h-8 p-[4px] w-8 " />
+   <span className='text-[16px] font-inter font-semibold ml-[2px]'>Filter</span>
+   </div>
+    <div className='flex flex-row w-[72px] h-[32px]'>
+    <div className='w-1/2 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><PiSquareSplitHorizontalFill /></div>
+    <div className='w-1/2 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><PiSquareSplitVerticalFill /></div>
+    </div>
+ </div>
+ <div className='py-[1px] flex flex-row justify-between mb-12'>
+   <div className='text-[16px] font-inter font-semibold ml-[2px]'> Headset</div>
+    <div className='text-[16px] font-inter font-semibold ml-[2px] flex flex-row'>
+    <span className=''> Sort by</span>
+    <span className=' h-[10px] mt-1  '><RiArrowDropDownLine /></span>
+    </div>
+ </div>
+  </div>
+  <div className=''>
+  <Mobileproduct />
+  </div>
+
 </div>
 
 
