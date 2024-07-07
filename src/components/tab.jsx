@@ -16,8 +16,8 @@ const Tab = () => {
 
   ];
   const taabs = [
-    { label: 'Shopping Cart', number: '1', content: <div></div> },
-    { label: 'Checkout details', number: '2', content: <div></div> },
+    { label: 'Shopping Cart', number: '1', number2: '2', content: <div></div> },
+
     
 
 
@@ -82,8 +82,8 @@ const Tab = () => {
               }`}
               onClick={() => handleClick(taab.label)}
             ><span className={  "bg-[#23262F] text-white rounded-full px-2 py-1 text-xs font-bold"}>{taab.number}</span>
-              {taab.label}
-            </button>
+              {taab.label}<span className={  "bg-[#23262F] text-white rounded-full px-2 py-1 text-xs font-bold mx-2"}>{taab.number2}</span>
+            </button> 
           ))}
         </div>
         <div className="p-4 ">

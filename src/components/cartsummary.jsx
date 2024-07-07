@@ -28,9 +28,11 @@ const Cartsummary = ({ subtotal = 0 }) => {
         <span className="font-[600] text-[20px]">Total:</span>
         <span className="font-semibold">${(subtotal + 5.99).toFixed(2)}</span>  {/* Assuming express shipping by default */}
       </div>
+      <a href ="/checkout">
       <button className="w-full mt-4 bg-black text-[18px] font-[500] text-white py-2 rounded-md focus:outline-none">
         Checkout
       </button>
+      </a>
     </div>
   );
 };

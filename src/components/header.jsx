@@ -67,7 +67,7 @@ const Header = () => {
     </div>
 
     <a className='w-[50px] h-[28px]' href='/cart'>
-        <ShoppingCartIcon className="h-[24px] w-[24px] text-[#092C4C]" />
+        <ShoppingCartIcon className="h-[24px] w-[24px] text-[#141718]" />
         </a>
     </div>
 
