@@ -59,10 +59,10 @@ const Orderbody = () => {
    <div className=" md:hidden flex flex-col  flex justify-center items-center text-[#141718]">
    <div className='font poppins text-[40px] text-center font-[500] text-[#000000]'>Complete!</div>
    <Tab />
-   <div className='justify-center items-center text-center space-y-[40px] shadow-xl h-auto w-4/5 p-[16px] -mt-[80px] mb-16'>
+   <div className='justify-center items-center text-center space-y-[40px] flex flex-col shadow-xl h-auto w-4/5 p-[16px] -mt-[80px] mb-16'>
    <div className='w-full h-[138px]'>
     <div className='text-[28px] font-poppins text-[#6C7275] text-left font-semibold '>Thank You!</div>
-    <div className='text-left text-[34px] font-poppins font-[#23262F] font-medium w-1/2 '>Your order has been received</div>
+    <div className='text-left text-[34px] font-poppins font-[#23262F] font-medium  '>Your order has been received</div>
 </div>
 <div className='w-full h-[104px] justify-center items-center space-x-[40px] px-[40px] flex flex-row'>
     <div className=''>HH</div>
