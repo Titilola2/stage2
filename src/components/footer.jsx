@@ -71,7 +71,7 @@ const Footer = () => {
   
 
       { /* mobile screen */  }
-   <div className=" md:hidden flex flex-col  px-[32px] py-[48px] text-[#FEFEFE] bg-[#232627] w-screen h-[609px] fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4">
+   <div className=" md:hidden flex flex-col  px-[32px] py-[48px] text-[#FEFEFE] bg-[#232627] w-screen h-[609px] bottom-0 left-0 w-full bg-gray-800 text-white p-4">
    
     <div className="  h-[301px] flex flex-col w-auto text-center ">
     <div className=' text-[24px] font-medium font-poppins '>

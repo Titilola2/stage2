@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 import headset from '../assets/1st-headset.svg';
+import headset2 from '../assets/2nd-headset.svg';
+import headset3 from '../assets/3rd-headset.svg';
+import headset4 from '../assets/4th-headset.svg';
+import headset5 from '../assets/5th-headset.svg';
+import headset6 from '../assets/6th-headset.svg';
+import headset7 from '../assets/7th-headset.svg';
+import headset8 from '../assets/8th-headset.svg';
+import headset9 from '../assets/9th-headset.svg';
 import StarRating from './starRating';
 
 const Mobileproduct = () => {
@@ -15,6 +23,9 @@ const Mobileproduct = () => {
     const handleRatingChange = (newRating) => {
       setRating(newRating);
     };
+    const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6, headset7, headset8, headset9, // Include all image paths here
+      // ..., more image paths
+      ];
   
   
     return (
@@ -27,7 +38,7 @@ const Mobileproduct = () => {
         {[...Array(12)].map((_, index) => ( // Render 12 product items
           <div key={index} className="w-[152px] h-[281px] flex flex-col ">
             <div className="h-4/5">
-              <img src={headset} alt="Headset" />
+              <img className='w-full h-full' src={headsetImages[index % headsetImages.length]} alt="Headset" />
             </div>
             <div className="h-1/5 bg-white flex flex-col">
               <div className="">
@@ -41,7 +52,7 @@ const Mobileproduct = () => {
         ))}
         
       </div>
-      <div className='justify-center items-center my-8'>
+      <div className='justify-center items-center my-8 mx-24'>
       <button
         className=" w-[163px] h-[40px] border-[#141718] border-[1px] rounded-[8px] text-[#141718] text-center "
       >

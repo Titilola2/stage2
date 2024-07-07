@@ -1,8 +1,17 @@
 
 import React, { useState, useEffect } from 'react';
 import { FiFilter } from 'react-icons/fi';
+import { TbAdjustmentsHorizontal } from "react-icons/tb";
 import ProductGrid from '../components/productGrid';
 import Mobileproduct from './mobileproduct';
+import { MdNavigateNext } from "react-icons/md";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { IoGridSharp } from "react-icons/io5";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import { PiSquareSplitVerticalFill, PiSquareSplitHorizontalFill } from "react-icons/pi";
+import lady from '../assets/lady.svg';
+
+
 
 
 
@@ -13,89 +22,92 @@ const Body = () => {
      setRating(newRating);
    };
 
+   
+   const [clickedItem, setClickedItem] = useState(null);
+
+   const handleItemClick = (item) => {
+     setClickedItem(item);
+   };
+ 
 
   return (
    <div className="flex flex-col ">
-
-
-{   /* large screen */          }
-<div className="hidden md:flex ">
-   
-</div>  
-
-{   /*small screen */}
-<div className=" md:hidden flex flex-col bg-white">
- 
-</div>    
 
 
 
 
   {/*  Product page*/}
 {   /* large screen */          }
-<div className="hidden md:flex px-[160px] pt-[60px] pb-[100px] bg-white flex flex-col">
-  <div className='flex flex-row w-[125px] h-[24px] justify-between'>
-  <div className=' font-inter font-[500] text-[14px] w-[40px]'>
+<div className="hidden md:flex px-[160px]   pb-[100px] bg-white flex flex-col">
+  <div className='flex flex-row w-[125px] h-[60px] pt-[40px] justify-between'>
+  <div className=' font-inter font-[500] text-[14px] w-[40px] text-[#6C7275]'>
       Home
    </div>
-   <div className=' font-inter font-[500] text-[14px] w-[40px]'>
-      Products
+   <MdNavigateNext className='mt-[3px] mr-[20px] text-[#6C7275]'/>
+   <div className=' font-inter font-[600] text-[14px] w-[40px]'>
+      Product
    </div>
   </div>
 
   
-  
   <div className="flex flex-row gap-4 mt-2">
   <div className="w-1/4 bg-white flex flex-col m ">
  <div className='filter flex flex-row mb-8'>
- <FiFilter className="text-gray-600 h-6 p-[4px] w-6" />
- <div className=' font-inter text-[20px] px-[4px] font-[600]'>Filter</div>
+ <TbAdjustmentsHorizontal className="text-[#121212] h-8 p-[4px] w-8 " />
+ <div className=' font-inter text-[20px] text-[#121212] px-[4px] font-[600]'>Filter</div>
     </div>
 
  <div className='Category '>
- <div className='my-2 text-left font-inter font-[600] text-[16px] pl-2'>Categories</div>
- <div class="max-h-20 overflow-y-auto  pr-4 pl-2 text-left">
+ <div className='my-2 text-left font-inter font-[600] text-[16px] pl-2'>CATEGORIES</div>
+ <div class="max-h-20 overflow-y-auto font-inter text-[14px] font-semibold text-[#807E7E] pr-4 pl-2 text-left">
  
-  <ul>
-   <li>All sound systems</li>
-   <li>Accesories</li>
-   <li>Earbuds</li>
-   <li>Headsets</li>
-   <li>Speakers</li>
-   <li>Sound Bars</li>
-  </ul>
+ <ul>
+      {['All sound systems', 'Accessories', 'Earbuds', 'Headsets', 'Speakers', 'Sound Bars'].map((item, index) => (
+        <li
+          key={index}
+          onClick={() => handleItemClick(item)}
+          style={{
+            color: clickedItem === item ? '#000' : '#807E7E',
+            textDecoration: clickedItem === item ? 'underline' : 'none',
+            cursor: 'pointer'
+          }}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
 </div>
  </div>
  <div className='price my-2 mx-1'>
-   <div className='my-2 text-left font-inter font-[600] text-[16px]'>Price</div>
+   <div className='my-2 text-left font-inter font-[600] text-[16px]'>PRICE</div>
    <div className=''>   
    <ul className="w-full px-1">
       <li className="flex flex-row justify-between w-full  h-[24px]">
-        <label htmlFor="react-checkbox" className="w-full text-left text-[12px] font-[600] font-inter text-[#6C7275]">All Price</label>
+        <label htmlFor="react-checkbox" className="w-full text-left text-[14px] font-[600] font-inter text-[#6C7275]">All Price</label>
         <input id="react-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0" style={{ accentColor: 'black' }} />
       </li>
       <li className="flex flex-row justify-between w-full  h-[24px]">
-        <label htmlFor="vue-checkbox" className="w-full text-left text-[12px] font-[600] font-inter text-[#6C7275]">$100.00 - 200.00</label>
+        <label htmlFor="vue-checkbox" className="w-full text-left text-[14px] font-[600] font-inter text-[#6C7275]">$100.00 - 200.00</label>
         <input id="vue-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0" style={{ accentColor: 'black' }} />
       </li>
       <li className="flex flex-row justify-between w-full  h-[24px]">
-        <label htmlFor="angular-checkbox" className="w-full text-left text-[12px] font-[600] font-inter text-[#6C7275]">$200.00 - 300.00</label>
+        <label htmlFor="angular-checkbox" className="w-full text-left text-[14px] font-[600] font-inter text-[#6C7275]">$200.00 - 300.00</label>
         <input id="angular-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0" style={{ accentColor: 'black' }} />
       </li>
       <li className="flex flex-row justify-between w-full  h-[24px]">
-        <label htmlFor="laravel-checkbox" className="w-full text-left text-[12px] font-[600] font-inter text-[#6C7275]">$300.00 - 400.00</label>
+        <label htmlFor="laravel-checkbox" className="w-full text-left text-[14px] font-[600] font-inter text-[#6C7275]">$300.00 - 400.00</label>
         <input id="laravel-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0" style={{ accentColor: 'black' }} />
       </li>
       <li className="flex flex-row justify-between w-full  h-[24px]">
-        <label htmlFor="angular-checkbox" className="w-full text-left text-[12px] font-[600] font-inter text-[#6C7275]">$400.00 - 500.00</label>
+        <label htmlFor="angular-checkbox" className="w-full text-left text-[14px] font-[600] font-inter text-[#6C7275]">$400.00 - 500.00</label>
         <input id="angular-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0" style={{ accentColor: 'black' }} />
       </li>
       <li className="flex flex-row justify-between w-full  h-[24px]">
-        <label htmlFor="laravel-checkbox" className="w-full text-left text-[12px] font-[600] font-inter text-[#6C7275]">$500.00 - 600.00</label>
+        <label htmlFor="laravel-checkbox" className="w-full text-left text-[14px] font-[600] font-inter text-[#6C7275]">$500.00 - 600.00</label>
         <input id="laravel-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0" style={{ accentColor: 'black' }} />
       </li>
       <li className="flex flex-row justify-between w-full  h-[24px]">
-        <label htmlFor="laravel-checkbox" className="w-full text-left text-[12px] font-[600] font-inter text-[#6C7275]">$600+</label>
+        <label htmlFor="laravel-checkbox" className="w-full text-left text-[14px] font-[600] font-inter text-[#6C7275]">$600+</label>
         <input id="laravel-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 focus:ring-0" style={{ accentColor: 'black' }} />
       </li>
     </ul>
@@ -105,11 +117,20 @@ const Body = () => {
 
 
 <div className="w-3/4 bg-white  flex flex-col ">
-<div className='filter flex flex-row mb-8 justify-between'>
- <div className=' font-inter text-[20px] px-[4px] font-[600]'>Filter</div>
- <div className=' font-inter text-[20px] px-[4px] font-[600] pr-8 w-[296px] justify-between flex flex-row'>
-   <div className='font-inter text-[16px] font-[600] w-[56px] h-[20px]'>Sort by</div>
-   <div className=''>toggle</div>
+<div className='filter flex flex-row mb-4 justify-between'>
+ <div className=' font-inter text-[20px] px-[4px] font-[600]'>Headset</div>
+ <div className=' font-inter text-[20px] px-[4px] font-[600] pr-8 gap-4 w-[296px] justify-between flex flex-row'>
+   <div className='font-inter  flex flex-row text-[16px] font-[600] text-[#121212] w-1/3 gap-1'>
+    <div className=''> Sort by</div>
+    <div className=' h-full mt-[4px] '><RiArrowDropDownLine /></div>
+   </div>
+   <div className='w-2/3  flex flex-row'>
+   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] border-[1px]'><BsFillGrid3X3GapFill /></div>
+   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><IoGridSharp /></div>
+   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><PiSquareSplitHorizontalFill /></div>
+   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><PiSquareSplitVerticalFill /></div>
+   </div>
+ 
  </div>
     </div>
 
@@ -135,8 +156,9 @@ const Body = () => {
 
 {  /* Newsletter*/}
 {   /* large screen */          }
-<div className="hidden md:flex ">
-<div className="  flex flex-col bg-[#ECECEC] h-[360px] py-[95px]  w-screen gap-[32px] justify-center items-center ">
+<div className="hidden md:flex  flex flex-row bg-[#ECECEC]">
+  <div className='w-1/3'></div>
+<div className="  flex flex-col bg-[#ECECEC] h-[360px] py-[95px]  gap-[32px] justify-center items-center ">
 <div className='flex flex-col gap-[8px] text-center'>
  
          <div className='font-poppins font-[500] text-[40px]'>
@@ -150,7 +172,8 @@ const Body = () => {
          Email Adress
    </div>
 </div>
-  
+<div className='w-1/4 mb-24]'><img src={lady} alt="lady" /></div>
+
 </div>  
 
   
