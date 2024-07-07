@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Tab from './tab';
+import Table from './table';
 
 const Checkoutbody = () => {
 
@@ -19,7 +20,12 @@ const Checkoutbody = () => {
         event.preventDefault();
         console.log(formData); // Replace with your logic for handling submitted data
       };
-
+  
+      const tableData = [
+        { product: 'Item 1', quantity: 1, price: '$5490.00' },
+        { product: 'Item 2', quantity: 2, price: '$520.00' },
+        { product: 'Item 3', quantity: 3, price: '$600.00' },
+      ];
 
   
   return (
@@ -239,13 +245,53 @@ const Checkoutbody = () => {
     <button className="w-full mt-4 bg-[#141718] text-[18px] font-[500] text-white py-2 rounded-md focus:outline-none">
         Place Order
       </button>
-
-
 </div>
 
 
-<div className="w-2/5 bg-white  flex flex-col bg-red border-[1px] border-[#6C7275] rounded-[2px] h-[400px]">
+<div className="w-2/5 bg-white  flex flex-col bg-red border-[1px] border-[#6C7275] rounded-[2px] h-[600px] px-[24px] py-[16px]">
+<div className='font-poppins font-[500] text-[28px]'>Order Summary</div>
+<div className=''> 
+<div className="flex flex-col">
+      <div className="w-full overflow-hidden rounded-md shadow-sm">
+       
+        <ul role="list" className="divide-y divide-gray-200">
+          {tableData.map((item, index) => (
+            <li key={index} className="flex px-4 py-4">
+              <div className="w-1/3 py-[24px]">{item.product}</div>
+              <div className="w-1/3 py-[24px] text-left">{item.quantity}</div>
+              <div className="w-1/3 py-[24px] text-right">{item.price}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
 </div>
+<div className='flex flex-col'> 
+     <div className='mx-[16px] w-full flex flex-col my-4'>
+       <div className='font-[500] font-poppins text-[16px]'>Have a coupon?</div>
+       <div className='font-[400] font-inter text-[14px] text-[#6C7275] my-2'>Add your code for instant cart distribution</div>
+       </div>
+       <div className=''>
+         <ul className="list-circle space-y-2 ">
+        <div className='justify-between flex flex-row'>
+        <div >Shipping</div>
+        <div> Express Shipping</div>
+        </div>        
+      </ul> 
+      <ul className="list-circle space-y-2 ">
+        <div className='justify-between flex flex-row'>
+        <div >Subtotal</div>
+        <div> $100</div>
+        </div> 
+      </ul>
+      <div className="flex justify-between mt-4">
+        <span className="font-[600] text-[20px]">Total</span>
+        <span className="font-semibold">$100</span>  {/* Assuming express shipping by default */}
+      </div></div>
+
+</div>
+</div>
+
 
   </div>
       </div>
@@ -463,8 +509,16 @@ const Checkoutbody = () => {
      
     </form>
     </div>
+
+
+
+    <button className="w-full mt-4 bg-[#141718] text-[18px] font-[500] text-white py-2 rounded-md focus:outline-none">
+        Place Order
+      </button>
     </div>
     
+
+
 
    
    </>
