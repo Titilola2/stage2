@@ -248,9 +248,11 @@ const Checkoutbody = () => {
      
     </form>
     </div>
+    <a href="/order">
     <button className="w-full mt-4 bg-[#141718] text-[18px] font-[500] text-white py-2 rounded-md focus:outline-none">
         Place Order
       </button>
+      </a>
 </div>
 
 
@@ -332,7 +334,7 @@ const Checkoutbody = () => {
 
    { /* mobile screen */  }
    <div className=" md:hidden flex flex-col px-[32px] py-[16px] flex justify-between text-[#141718]">
-   <div className='font poppins text-[40px] text-center font-[500] text-[#000000]'>Cart</div>
+   <div className='font poppins text-[40px] text-center font-[500] text-[#000000]'>Checkout</div>
    <Tab />
 
    <div className='px-[24px] py-[16px] mb-[24px] -my-16  border-[1px] h-[328px] border-[#6C7275] rounded-[4px]'>
@@ -616,9 +618,11 @@ const Checkoutbody = () => {
 
 </div>
     </div>
+    <a href="/order">
     <button className="w-full mt-4 bg-[#141718] text-[18px] font-[500] text-white py-2 rounded-md focus:outline-none">
         Place Order
       </button>
+      </a>
     </div>
     
 
