@@ -12,6 +12,8 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { IoGridSharp } from "react-icons/io5";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { PiSquareSplitVerticalFill, PiSquareSplitHorizontalFill } from "react-icons/pi";
+import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
+import { styled } from '@mui/system';
 
 import StarRating from './starRating';
 
@@ -32,10 +34,46 @@ console.log (gridClassName);
 const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6, headset7, headset8, headset9, // Include all image paths here
   // ..., more image paths
   ];
+  const headsets = [
+    { img: headset, name: 'Echo hx', price: '$549.00' },
+    { img: headset2, name: 'Echo 89', price: '$560.00' },
+    { img: headset3, name: 'Echo 95', price: '$540.00' },
+    { img: headset4, name: 'Echo 78', price: '$520.99' },
+    { img: headset5, name: 'Echo 90', price: '$500.99' },
+    { img: headset6, name: 'Echo 75', price: '$525.00' },
+    { img: headset7, name: 'Echo EX', price: '$600.00' },
+    { img: headset8, name: 'Echo BX', price: '$575.99' },
+    { img: headset9, name: 'Echo TX', price: '$550.99' },
+  ];
 
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
+  const [anchor, setAnchor] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchor(anchor ? null : event.currentTarget);
+  };
+
+  const open = Boolean(anchor);
+  const id = open ? 'simple-popup' : undefined;
+
+  const PopupBody = styled('div')(
+    ({ theme }) => `
+    
+    padding: 12px 16px;
+    margin: 8px;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: black ;
+    box-shadow:
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    z-index: 0;
+  `,
+  );
+  
 
 
   return (
@@ -59,36 +97,37 @@ const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6
  </div>
     </div>
 
-      <button onClick={toggleGrid}> 
-        {gridSize === 3 ? '' : ''}     
+    <button onClick={toggleGrid}>
+        {gridSize === 3 ? 'Show 2x2 Grid' : 'Show 3x3 Grid'}
       </button>
-    <div className={`products grid grid-cols-3`}>
-       
-      {[...Array(9)].map((_, index) => ( // Render 12 product items
-        <div key={index} className="w-[222px] h-[433px] flex flex-col">
-          <div className="h-4/5">
-            <img className='w-full h-full' src={headsetImages[index % headsetImages.length]} alt="Headset" />
-          
-          </div>
-          <div className="h-1/5 bg-white flex flex-col">
-            <div className="">
-              {/* Your StarRating component here */}
-              <StarRating rating={rating} onRatingChange={handleRatingChange} />
+
+      <div className={`products grid grid-cols-${gridSize}`}>
+        {headsets.map((headset, index) => (
+          <div key={index} className="w-[222px] h-[433px] flex flex-col">
+            <div className="h-4/5">
+              <a href="/cart">
+                <BasePopup className=" " id={id} open={open} anchor={anchor}>
+                  <PopupBody className='text-white w-full '>Add to Cart</PopupBody>
+                </BasePopup>
+              </a>
+              <img className='w-full h-full' src={headset.img} onClick={handleClick} alt={headset.name} />
             </div>
+            <div className="h-1/5 bg-white flex flex-col">
+              <div className="">
+                <StarRating rating={rating} onRatingChange={handleRatingChange} />
+              </div>
+            </div>
+            <div className="h-1/3 bg-white font-inter text-left text-[16px] -mt-4 font-[600]">{headset.name}</div>
+            <div className="h-1/3 bg-white font-inter text-left text-[16px] -mt-12 font-[600]">{headset.price}</div>
           </div>
-          <div className="h-1/3 bg-white font-inter text-left text-[16px] font-[600]">Echo hx</div>
-          <div className="h-1/3 bg-white font-inter text-left text-[16px] font-[600]">$549</div>
-        </div>
-      ))}
-      
-    </div>
-    <div className='justify-center items-center my-8  px-[250px]'>
-    <button
-      className=" w-[163px] h-[40px] border-[#141718] border-[1px] font-[500] text-inter text-[16px] rounded-[8px] text-[#141718] text-center "
-    >
-      Show more
-    </button>
-    </div>
+        ))}
+      </div>
+
+      <div className='justify-center items-center my-8 px-[250px]'>
+        <button className="w-[163px] h-[40px] border-[#141718] border-[1px] font-[500] text-inter text-[16px] rounded-[8px] text-[#141718] text-center">
+          Show more
+        </button>
+      </div>
     </div>
   );
 };

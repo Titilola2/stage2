@@ -38,7 +38,7 @@ const Body = () => {
 
   {/*  Product page*/}
 {   /* large screen */          }
-<div className="hidden md:flex px-[160px]   pb-[100px] bg-white flex flex-col">
+<div className="hidden md:flex px-[150px]   pb-[100px] bg-white flex flex-col">
   <div className='flex flex-row w-[125px] h-[60px] pt-[40px] justify-between'>
   <div className=' font-inter font-[500] text-[14px] w-[40px] text-[#6C7275]'>
       Home
