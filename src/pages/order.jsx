@@ -10,7 +10,9 @@ const Order = () => {
     
    <div className="  gap-2 flex flex-col  ">
    <div className="">
-   <Header />
+   <div className='md:hidden'>
+    <Header />
+    </div>
   <Orderbody />
  
 <Footer />

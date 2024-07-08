@@ -16,7 +16,7 @@ const Tab = () => {
 
   ];
   const taabs = [
-    { label: 'Shopping Cart', number: '1', number2: '2', content: <div></div> },
+    { label: 'Checkout details', number: '2', number2: '3', content: <div></div> },
 
     
 
@@ -69,20 +69,20 @@ const Tab = () => {
 
 
    { /* mobile screen */  }
-   <div className=" md:hidden flex flex-col  py-[16px] flex justify-between text-[#141718]">
-   <div className='w-[376px] h-[256px] -mb-20'>
+   <div className=" md:hidden flex flex-col w-full  py-[16px] flex justify-between text-[#141718]">
+   <div className='px-[32px] h-[256px] -mb-20'>
         <div className='px-2 w-full'>
-        <div className="top flex flex-col  justify-center items-center  mx-2">
+        <div className="top flex flex-col   mx-2">
         <div className="flex items-center text-center border-b border-gray-200 font-inter text-[14px] font-[600] justify-around">
           {taabs.map((taab) => (
             <button
               key={taab.label}
-              className={`px-3  py-4 text-[#B1B5C3] hover:text-gray-900  mt-2 ${
+              className={`  py-4 text-[#B1B5C3] hover:text-gray-900  mt-2 ${
                 activeTaab === taab.label ? 'border-b-2 border-black  text-[#23262F]' : ''
               }`}
               onClick={() => handleClick(taab.label)}
-            ><span className={  "bg-[#23262F] text-white rounded-full px-2 py-1 text-xs font-bold"}>{taab.number}</span>
-              {taab.label}<span className={  "bg-[#23262F] text-white rounded-full px-2 py-1 text-xs font-bold mx-2"}>{taab.number2}</span>
+            ><span className={  "bg-[#23262F] text-white rounded-full px-2 py-1 mr-4 text-xs font-bold"}>{taab.number}</span>
+              {taab.label}<span className={  "bg-[#B1B5C3] text-white rounded-full px-2 py-1 ml-8 text-xs font-bold mx-2"}>{taab.number2}</span>
             </button> 
           ))}
         </div>

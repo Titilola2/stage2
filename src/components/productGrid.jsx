@@ -8,6 +8,10 @@ import headset6 from '../assets/6th-headset.svg';
 import headset7 from '../assets/7th-headset.svg';
 import headset8 from '../assets/8th-headset.svg';
 import headset9 from '../assets/9th-headset.svg';
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { IoGridSharp } from "react-icons/io5";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import { PiSquareSplitVerticalFill, PiSquareSplitHorizontalFill } from "react-icons/pi";
 
 import StarRating from './starRating';
 
@@ -19,10 +23,11 @@ const ProductGrid = () => {
     setGridSize((prevGridSize) => (prevGridSize === 3 ? 2 : 3));
   };
 
-  const gridClassName = `products grid grid-cols-${gridSize} gap-2 `;
+  const gridClassName = `products grid grid-cols-${gridSize}-gap-2 `;
   const [rating, setRating] = useState(0);
 
 console.log( gridSize);
+console.log (gridClassName);
 
 const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6, headset7, headset8, headset9, // Include all image paths here
   // ..., more image paths
@@ -37,10 +42,27 @@ const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6
     
 
     <div className='flex flex-col'>
-      <button onClick={toggleGrid}>
-        {gridSize === 3 ? 'Show 2x2 Grid' : 'Show 3x3 Grid'}
+      <div className='filter flex flex-row mb-4 justify-between'>
+ <div className=' font-inter text-[20px] px-[4px] font-[600]'>Headset</div>
+ <div className=' font-inter text-[20px] px-[4px] font-[600] pr-8 gap-4 w-[296px] justify-between flex flex-row'>
+   <div className='font-inter  flex flex-row text-[16px] font-[600] text-[#121212] w-1/3 gap-1'>
+    <div className=''> Sort by</div>
+    <div className=' h-full mt-[4px] '><RiArrowDropDownLine /></div>
+   </div>
+   <div className='w-2/3  flex flex-row'>
+   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] bg-[#E8ECEF] border-[1px]'onClick={toggleGrid}><BsFillGrid3X3GapFill /></div>
+   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'onClick={toggleGrid}><IoGridSharp /></div>
+   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><PiSquareSplitHorizontalFill /></div>
+   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><PiSquareSplitVerticalFill /></div>
+   </div>
+ 
+ </div>
+    </div>
+
+      <button onClick={toggleGrid}> 
+        {gridSize === 3 ? '' : ''}     
       </button>
-    <div className={`products grid drid-cols-${gridClassName}`}>
+    <div className={`products grid grid-cols-${gridSize}`}>
        
       {[...Array(9)].map((_, index) => ( // Render 12 product items
         <div key={index} className="w-[222px] h-[433px] flex flex-col">

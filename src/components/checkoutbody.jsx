@@ -10,6 +10,14 @@ const Checkoutbody = () => {
         lastName: '',
         phoneNumber: '',
         emailAddress: '',
+        streetAddress: '',
+        country: '',
+        town: '',
+        state: '',
+        zipCode: '',
+        cardNumber: '',
+        expiryDate: '',
+        cvc: '',
       });
                         
         const [isActive, setIsActive] = useState(false);
@@ -26,7 +34,11 @@ const Checkoutbody = () => {
         event.preventDefault();
         console.log(formData); // Replace with your logic for handling submitted data
       };
-  
+      const [selectedPayment, setSelectedPayment] = useState(''); // Initially no selection
+
+      const handlePaymentChange = (paymentOption) => {
+        setSelectedPayment(paymentOption);
+      };
       const tableData = [
         { product: 'Item 1', quantity: 1, price: '$5490.00' },
         { product: 'Item 2', quantity: 2, price: '$520.00' },
@@ -56,7 +68,7 @@ const Checkoutbody = () => {
           type="text"
           id="firstName"
           placeholder='First name'
-          name="First name"
+          name="firstName"
           value={formData.firstName}
           onChange={handleChange}
           required
@@ -85,7 +97,7 @@ const Checkoutbody = () => {
           type="tel"
           id="phoneNumber"
           placeholder='Phone number'
-          name="Phonenumber"
+          name="phoneNumber"
           value={formData.phoneNumber}
           onChange={handleChange}
           required
@@ -115,13 +127,13 @@ const Checkoutbody = () => {
   <form onSubmit={handleSubmit} className="flex flex-col space-y-4 text-inter font-[700] text-[#6C7275]">
     
       <div className="flex flex-col items-left text-[14px]">
-        <label htmlFor="phoneNumber" className=" text-left text-[12px]">STREET ADDRESS</label>
+        <label htmlFor="streetAddress" className=" text-left text-[12px]">STREET ADDRESS</label>
         <input
           type="tel"
-          id="phoneNumber"
+          id="streetAddress"
           placeholder='Street Address'
-          name="Phonenumber"
-          value={formData.phoneNumber}
+          name="streetAddress"
+          value={formData.streetAddress}
           onChange={handleChange}
           required
           className="4 px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -131,11 +143,11 @@ const Checkoutbody = () => {
       <div className="flex flex-col items-left text-[14px]">
         <label htmlFor="emailAddress" className=" text-left text-[12px]">COUNTRY</label>
         <input
-          type="email"
-          id="emailAddress"
+          type="country"
+          id="country"
           placeholder='Country'
-          name="emailAddress"
-          value={formData.emailAddress}
+          name="country"
+          value={formData.emailcountry}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -143,13 +155,13 @@ const Checkoutbody = () => {
       </div>
 
       <div className="flex flex-col items-left text-[14px]">
-        <label htmlFor="emailAddress" className=" text-left text-[12px]">TOWN/CITY</label>
+        <label htmlFor="town" className=" text-left text-[12px]">TOWN/CITY</label>
         <input
-          type="email"
-          id="emailAddress"
+          type="town"
+          id="town"
           placeholder='Town/City'
-          name="emailAddress"
-          value={formData.emailAddress}
+          name="town"
+          value={formData.town}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -158,26 +170,26 @@ const Checkoutbody = () => {
 
       <div className='flex flex-row gap-4 w-full '>
     <div className="flex flex-col w-1/2 items-left text-[14px]" >
-        <label htmlFor="firstName" className=" text-left text-[12px]">STATE</label>
+        <label htmlFor="state" className=" text-left text-[12px]">STATE</label>
         <input
-          type="text"
-          id="firstName"
+          type="state"
+          id="state"
           placeholder='State'
-          name="First name"
-          value={formData.firstName}
+          name="state"
+          value={formData.state}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
       </div>
       <div className="flex flex-col w-1/2 items-left text-[14px]">
-        <label htmlFor="lastName" className="text-left text-[12px]">ZIP CODE</label>
+        <label htmlFor="zipCode" className="text-left text-[12px]">ZIP CODE</label>
         <input
           type="text"
-          id="lastName"
+          id="zipCode"
           placeholder='Zip code'
-          name="lastName"
-          value={formData.lastName}
+          name="zipCode"
+          value={formData.zipCode}
           onChange={handleChange}
           required
           className="px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -191,24 +203,56 @@ const Checkoutbody = () => {
     </div>
     <div className='px-4 py-4 flex flex-col  border-[1px] border-[#6C7275] rounded-[2px]'>
     <div className='font-inter font-[600] text-poppins my-4'> Payment Method</div>
-    <button className="w-full my-2 bg-white border-[1px] text-[12px] font-[500] text-[#141718] text-left px-4 py-2 rounded-md focus:outline-none">
-        Pay by credit card
+    <div className="flex flex-col gap-2">
+      <button
+        className={`w-full my-2 bg-white border-[1px] text-[12px] font-[500] text-[#141718] text-left px-4 py-2 rounded-md focus:outline-none hover:bg-gray-200 ${
+          selectedPayment === 'creditCard' ? 'border-black' : ''
+        }`}
+        onClick={() => handlePaymentChange('creditCard')}
+      >
+        <input
+          type="radio"
+          id="creditCard"
+          name="payment"
+          checked={selectedPayment === 'creditCard'}
+          onChange={() => handlePaymentChange('creditCard')}
+          style={{ accentColor: 'black' }} // Set radio button color to black
+        />
+        <label htmlFor="creditCard" className="ml-2">
+          Pay by credit card
+        </label>
       </button>
-      <button className="w-full my-2 mb-8 bg-white border-[1px] text-[12px] font-[500] text-[#141718] text-left px-4 py-2 rounded-md focus:outline-none">
-        Pay by transfer
+      <button
+        className={`w-full my-2 mb-8 bg-white border-[1px] text-[12px] font-[500] text-[#141718] text-left px-4 py-2 rounded-md focus:outline-none hover:bg-gray-200 ${
+          selectedPayment === 'transfer' ? 'border-black' : ''
+        }`}
+        onClick={() => handlePaymentChange('transfer')}
+      >
+        <input
+          type="radio"
+          id="transfer"
+          name="payment"
+          checked={selectedPayment === 'transfer'}
+          onChange={() => handlePaymentChange('transfer')}
+          style={{ accentColor: 'black' }} // Set radio button color to black
+        />
+        <label htmlFor="transfer" className="ml-2">
+          Pay by transfer
+        </label>
       </button>
+    </div>
 
   <form onSubmit={handleSubmit} className="flex flex-col space-y-4 text-inter font-[700] text-[#6C7275]">
     
    <div className='py-4 border-t-[1px] border-[#6C7275]'>
       <div className="flex flex-col items-left text-[14px]">
-        <label htmlFor="emailAddress" className=" text-left text-[12px]">CARD NUMBER</label>
+        <label htmlFor="cardNumber" className=" text-left text-[12px]">CARD NUMBER</label>
         <input
-          type="email"
-          id="emailAddress"
+          type="number"
+          id="cardNumber"
           placeholder='1234 1234 1234'
-          name="emailAddress"
-          value={formData.emailAddress}
+          name="cardNumber"
+          value={formData.cardNumber}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -217,26 +261,26 @@ const Checkoutbody = () => {
 
       <div className='flex pt-4 flex-row gap-4 w-full '>
     <div className="flex flex-col w-1/2 items-left text-[14px]">
-        <label htmlFor="firstName" className=" text-left text-[12px] ">EXPIRATION DATE</label>
+        <label htmlFor="expiryDate" className=" text-left text-[12px] ">EXPIRATION DATE</label>
         <input
           type="text"
-          id="firstName"
+          id="expiryDate"
           placeholder='MM/YY'
-          name="First name"
-          value={formData.firstName}
+          name="expiryDate"
+          value={formData.expiryDate}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
       </div>
       <div className="flex flex-col w-1/2 items-left text-[14px]">
-        <label htmlFor="lastName" className="text-left text-[12px] ">CVC</label>
+        <label htmlFor="cvc" className="text-left text-[12px] ">CVC</label>
         <input
           type="text"
-          id="lastName"
+          id="cvc"
           placeholder='CVC code'
-          name="lastName"
-          value={formData.lastName}
+          name="cvc"
+          value={formData.cvc}
           onChange={handleChange}
           required
           className="px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -347,7 +391,7 @@ const Checkoutbody = () => {
           type="text"
           id="firstName"
           placeholder='First name'
-          name="First name"
+          name="firstName"
           value={formData.firstName}
           onChange={handleChange}
           required
@@ -406,13 +450,13 @@ const Checkoutbody = () => {
   <form onSubmit={handleSubmit} className="flex flex-col space-y-[24px] text-inter font-[700] text-[#6C7275]">
     
       <div className="flex flex-col items-left text-[14px]">
-        <label htmlFor="phoneNumber" className=" text-left text-[12px] mb-[12px]">STREET ADDRESS*</label>
+        <label htmlFor="streetAddress" className=" text-left text-[12px] mb-[12px]">STREET ADDRESS*</label>
         <input
           type="tel"
-          id="phoneNumber"
+          id="streetAddress"
           placeholder='Street Address'
-          name="Phonenumber"
-          value={formData.phoneNumber}
+          name="streetAddress"
+          value={formData.streetAddress}
           onChange={handleChange}
           required
           className="4 px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -420,13 +464,13 @@ const Checkoutbody = () => {
       </div>
 
       <div className="flex flex-col items-left text-[14px]">
-        <label htmlFor="emailAddress" className=" text-left text-[12px] mb-[12px]">COUNTRY*</label>
+        <label htmlFor="country" className=" text-left text-[12px] mb-[12px]">COUNTRY*</label>
         <input
           type="email"
-          id="emailAddress"
+          id="country"
           placeholder='Country'
-          name="emailAddress"
-          value={formData.emailAddress}
+          name="country"
+          value={formData.country}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -434,13 +478,13 @@ const Checkoutbody = () => {
       </div>
 
       <div className="flex flex-col items-left text-[14px]">
-        <label htmlFor="emailAddress" className=" text-left text-[12px] mb-[12px]">TOWN/CITY*</label>
+        <label htmlFor="town" className=" text-left text-[12px] mb-[12px]">TOWN/CITY*</label>
         <input
           type="email"
-          id="emailAddress"
+          id="town"
           placeholder='Town/City'
-          name="emailAddress"
-          value={formData.emailAddress}
+          name="town"
+          value={formData.town}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -449,26 +493,26 @@ const Checkoutbody = () => {
 
       <div className='flex flex-row gap-[8px] px-[8px]  w-full '>
     <div className="flex flex-col w-1/2 items-left text-[14px]" >
-        <label htmlFor="firstName" className=" text-left text-[12px] mb-[12px]">STATE</label>
+        <label htmlFor="state" className=" text-left text-[12px] mb-[12px]">STATE</label>
         <input
           type="text"
-          id="firstName"
+          id="state"
           placeholder='State'
-          name="First name"
-          value={formData.firstName}
+          name="state"
+          value={formData.state}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
       </div>
       <div className="flex flex-col w-1/2 items-left text-[14px]">
-        <label htmlFor="lastName" className="text-left text-[12px] mb-[12px]">ZIP CODE</label>
+        <label htmlFor="zipCode" className="text-left text-[12px] mb-[12px]">ZIP CODE</label>
         <input
           type="text"
-          id="lastName"
+          id="zipCode"
           placeholder='Zip code'
-          name="lastName"
-          value={formData.lastName}
+          name="zipCode"
+          value={formData.zipCode}
           onChange={handleChange}
           required
           className="px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -490,30 +534,56 @@ const Checkoutbody = () => {
     <div className='px-[24px] py-[24px] mb-[24px] flex flex-col h-[436px]  border-[1px]  border-[#6C7275] rounded-[4px]'>
     <div className='font-inter font-[600] text-poppins mb-[24px] '> Payment Method</div>
    
-      <button className={`w-full mb-[24px]  bg-white border-[1px] border-[#6C7275] text-[14px] font-[500] text-[#141718] text-left px-4 py-[20px] rounded-md focus:outline-none" ${
-        isActive ? 'bg-gray-200 list-disc' : 'list-style-none'
-      }`}
-      onClick={handleClick}>
-        Pay by Credit Card
+    <div className="flex flex-col gap-2">
+      <button
+        className={`w-full my-2 bg-white border-[1px] text-[12px] font-[500] text-[#141718] text-left px-[13px] py-[13px] rounded-md focus:outline-none hover:bg-gray-200 ${
+          selectedPayment === 'creditCard' ? 'border-black' : ''
+        }`}
+        onClick={() => handlePaymentChange('creditCard')}
+      >
+        <input
+          type="radio"
+          id="creditCard"
+          name="payment"
+          checked={selectedPayment === 'creditCard'}
+          onChange={() => handlePaymentChange('creditCard')}
+          style={{ accentColor: 'black' }} // Set radio button color to black
+        />
+        <label htmlFor="creditCard" className="ml-2">
+          Pay by credit card
+        </label>
       </button>
-      <button className={`w-full mb-[24px]  bg-white border-[1px] border-[#6C7275] text-[14px] font-[500] text-[#141718] text-left px-4 py-[20px] rounded-md focus:outline-none" ${
-        isActive ? 'bg-gray-200 list-disc' : 'list-style-none'
-      }`}
-      onClick={handleClick}>
-        Pay by Transfer
+      <button
+        className={`w-full my-2 mb-8 bg-white border-[1px] text-[12px] font-[500] text-[#141718] text-left px-[13px] py-[13px]  rounded-md focus:outline-none hover:bg-gray-200 ${
+          selectedPayment === 'transfer' ? 'border-black' : ''
+        }`}
+        onClick={() => handlePaymentChange('transfer')}
+      >
+        <input
+          type="radio"
+          id="transfer"
+          name="payment"
+          checked={selectedPayment === 'transfer'}
+          onChange={() => handlePaymentChange('transfer')}
+          style={{ accentColor: 'black' }} // Set radio button color to black
+        />
+        <label htmlFor="transfer" className="ml-2">
+          Pay by transfer
+        </label>
       </button>
+    </div>
  
   <form onSubmit={handleSubmit} className="flex flex-col space-y-4 text-inter font-[700] text-[#6C7275]">
     
    <div className='py-[24px] border-t-[1px] border-[#6C7275]'>
       <div className="flex flex-col items-left text-[14px]">
-        <label htmlFor="emailAddress" className=" text-left text-[12px] mb-[12px]">CARD NUMBER</label>
+        <label htmlFor="cardNumber" className=" text-left text-[12px] mb-[12px]">CARD NUMBER</label>
         <input
           type="email"
-          id="emailAddress"
+          id="cardNumber"
           placeholder='1234 1234 1234'
-          name="emailAddress"
-          value={formData.emailAddress}
+          name="cardNumber"
+          value={formData.cardNumber}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -522,26 +592,26 @@ const Checkoutbody = () => {
 
       <div className='flex pt-4 flex-row gap-4 w-full '>
     <div className="flex flex-col w-1/2 items-left text-[14px]">
-        <label htmlFor="firstName" className=" text-left text-[12px] mb-[12px]">EXPIRATION DATE</label>
+        <label htmlFor="expiryDate" className=" text-left text-[12px] mb-[12px]">EXPIRATION DATE</label>
         <input
           type="text"
-          id="firstName"
+          id="expiryDate"
           placeholder='MM/YY'
-          name="First name"
-          value={formData.firstName}
+          name="expiryDate"
+          value={formData.expiryDate}
           onChange={handleChange}
           required
           className=" px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
       </div>
       <div className="flex flex-col w-1/2 items-left text-[14px]">
-        <label htmlFor="lastName" className="text-left text-[12px] mb-[12px]">CVC</label>
+        <label htmlFor="cvc" className="text-left text-[12px] mb-[12px]">CVC</label>
         <input
           type="text"
-          id="lastName"
+          id="cvc"
           placeholder='CVC code'
-          name="lastName"
-          value={formData.lastName}
+          name="cvc"
+          value={formData.cvc}
           onChange={handleChange}
           required
           className="px-2 py-1 rounded border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"

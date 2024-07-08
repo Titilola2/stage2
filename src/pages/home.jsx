@@ -10,7 +10,10 @@ const Home = () => {
     
    <div className="  gap-2 flex flex-col  ">
    <div className="">
-   <Header />
+    <div className=''>
+    <Header />
+    </div>
+  
   
    <Body />
 <Footer />

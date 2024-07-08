@@ -117,22 +117,6 @@ const Body = () => {
 
 
 <div className="w-3/4 bg-white  flex flex-col ">
-<div className='filter flex flex-row mb-4 justify-between'>
- <div className=' font-inter text-[20px] px-[4px] font-[600]'>Headset</div>
- <div className=' font-inter text-[20px] px-[4px] font-[600] pr-8 gap-4 w-[296px] justify-between flex flex-row'>
-   <div className='font-inter  flex flex-row text-[16px] font-[600] text-[#121212] w-1/3 gap-1'>
-    <div className=''> Sort by</div>
-    <div className=' h-full mt-[4px] '><RiArrowDropDownLine /></div>
-   </div>
-   <div className='w-2/3  flex flex-row'>
-   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] border-[1px]'><BsFillGrid3X3GapFill /></div>
-   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><IoGridSharp /></div>
-   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><PiSquareSplitHorizontalFill /></div>
-   <div className='w-1/4 py-[4px] px-[8px] border-[#EAEAEA] text-[#6C7275] border-[1px]'><PiSquareSplitVerticalFill /></div>
-   </div>
- 
- </div>
-    </div>
 
  <div className='products   '>
 <ProductGrid />

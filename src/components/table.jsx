@@ -1,11 +1,19 @@
 import React from 'react';
+import { useState } from 'react';
 
 const Table = () => {
-  const tableData = [
+  const [tableData, setTableData] = useState([
     { product: 'Item 1', quantity: 1, price: '$5490.00' },
-    { product: 'Item 2', quantity: 2, price: '$520.00' },
-    { product: 'Item 3', quantity: 3, price: '$600.00' },
-  ];
+    { product: 'Item 2', quantity: 1, price: '$520.00' },
+    { product: 'Item 3', quantity: 1, price: '$600.00' },
+  ]);
+  const handleQuantityChange = (index, newQuantity) => {
+    setTableData((prevData) => {
+      const updatedData = [...prevData];
+      updatedData[index].quantity = Math.max(1, newQuantity); // Ensure quantity is 1 or more
+      return updatedData;
+    });
+  };
 
   return (
     <div className="flex flex-col">
@@ -21,7 +29,23 @@ const Table = () => {
           {tableData.map((item, index) => (
             <li key={index} className="flex px-4 py-4">
               <div className="w-1/3 py-[24px]">{item.product}</div>
-              <div className="w-1/3 py-[24px] text-center">{item.quantity}</div>
+                <button className='flex flex-row px-[8px] py-[4px] space-x-[16px] mt-[20px] border-[1px] border #6C7275 w-[74px] h-[30px]' >
+                <div
+                  className="mb-[]    "
+                  onClick={() => handleQuantityChange(index, item.quantity - 1)}
+                >
+                  -
+                </div>
+                <span className="mb-[] mx-2">{item.quantity}</span>
+                <div
+                  className="mb-[]   "
+                  onClick={() => handleQuantityChange(index, item.quantity + 1)}
+                >
+                  +
+                </div>
+
+                </button>
+             
               <div className="w-1/3 py-[24px] text-right">{item.price}</div>
             </li>
           ))}
