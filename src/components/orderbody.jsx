@@ -68,21 +68,7 @@ const Orderbody = () => {
 </div>
   </div>
        </div>
-       <div className="hidden md:flex flex-row  py-[16px] justify-between   px-[160px] text-[#141718]">
-      <div className="  text-[#000000]  w-[108px] h-[24px] text-xl font-medium font-poppins">
-      ECHOMAX
-      </div>
-
-
-      <div className="flex flex-row justify-between w-[130px] h-[28px] gap-[16px]">
-        <MagnifyingGlassIcon className="h-[24px] w-[24px] text-[#141718]" />
-        <UserCircleIcon className="h-[20px] w-[24spx] text-[#141718]" />
-        <a className=' h-[28px]' href='/cart'>
-        <ShoppingCartIcon className="h-[24px] w-[24px] text-[#141718]"  />
-        </a>
-      </div>
-      
-      </div>
+     
 
      
       

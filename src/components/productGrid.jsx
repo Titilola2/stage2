@@ -119,7 +119,7 @@ const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6
                   <PopupBody className='text-white w-full ' onClick={handlePopupClick}>Add to Cart</PopupBody>
                 </BasePopup>
         
-              <img className='w-full h-full' src={headset.img} onClick={handleClick} alt={headset.name} />
+              <img className='w-full h-full' src={headset.img} onClick={handleClick}  onMouseEnter={handleClick}  alt={headset.name} />
             </div>
             <div className="h-1/5 bg-white flex flex-col">
               <div className="">
