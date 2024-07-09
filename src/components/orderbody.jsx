@@ -75,8 +75,8 @@ const Orderbody = () => {
 
 
       <div className="flex flex-row justify-between w-[130px] h-[28px] gap-[16px]">
-        <MagnifyingGlassIcon className="h-[24px] w-[24px] text-[#092C4C]" />
-        <UserCircleIcon className="h-[20px] w-[24spx] text-[#092C4C]" />
+        <MagnifyingGlassIcon className="h-[24px] w-[24px] text-[#141718]" />
+        <UserCircleIcon className="h-[20px] w-[24spx] text-[#141718]" />
         <a className=' h-[28px]' href='/cart'>
         <ShoppingCartIcon className="h-[24px] w-[24px] text-[#141718]"  />
         </a>

@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import headset from '../assets/1st-headset.svg';
 import headset2 from '../assets/2nd-headset.svg';
@@ -112,15 +110,15 @@ const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6
         {gridSize === 3 ? '' : ''}
       </button>
 
-      <div className={`products grid grid-cols-${gridSize}`}>
+      <div className={`products grid grid-cols-3`}>
         {headsets.map((headset, index) => (
           <div key={index} className="w-[222px] h-[433px] flex flex-col">
             <div className="h-4/5">
-            <a href="/cart">
+     
                 <BasePopup className=" " id={id} open={open} anchor={anchor}>
                   <PopupBody className='text-white w-full ' onClick={handlePopupClick}>Add to Cart</PopupBody>
                 </BasePopup>
-              </a>
+        
               <img className='w-full h-full' src={headset.img} onClick={handleClick} alt={headset.name} />
             </div>
             <div className="h-1/5 bg-white flex flex-col">
