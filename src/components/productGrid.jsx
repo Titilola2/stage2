@@ -101,7 +101,7 @@ const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6
         {gridSize === 3 ? '' : ''}
       </button>
 
-      <div className={`products grid grid-cols-${gridSize}`}>
+      <div className={`products grid grid-cols-3`}>
         {headsets.map((headset, index) => (
           <div key={index} className="w-[222px] h-[433px] flex flex-col">
             <div className="h-4/5">
