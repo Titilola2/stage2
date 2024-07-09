@@ -25,7 +25,7 @@ const ProductGrid = () => {
     setGridSize((prevGridSize) => (prevGridSize === 3 ? 2 : 3));
   };
 
-  const gridClassName = `products grid grid-cols-${gridSize}-gap-2 `;
+  const gridClassName = `products grid grid-cols-${gridSize}-gap-1 `;
   const [rating, setRating] = useState(0);
 
 console.log( gridSize);
