@@ -98,7 +98,7 @@ const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6
     </div>
 
     <button onClick={toggleGrid}>
-        {gridSize === 3 ? 'Show 2x2 Grid' : 'Show 3x3 Grid'}
+        {gridSize === 3 ? '' : ''}
       </button>
 
       <div className={`products grid grid-cols-${gridSize}`}>
