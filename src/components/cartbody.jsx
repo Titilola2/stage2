@@ -3,14 +3,31 @@ import React, { useState, useEffect } from 'react';
 import Table from './table';
 import Cartsummary from './cartsummary';
 import { RiCouponLine } from "react-icons/ri";
-
+import headset from '../assets/1st-headset.svg';
+import headset4 from '../assets/4th-headset.svg';
+import headset7 from '../assets/7th-headset.svg';
 const Cartbody = () => {
  
   
   const [activeTab, setActiveTab] = useState('tab1');
   const [activeTaab, setActiveTaab] = useState('taab1');
 
+
+    const [tableData, setTableData] = useState([
+      { product: 'Echo hx', quantity: 1, color: 'Colour: Black', price: '$5490.00', img: headset, },
+      { product: 'Echo 78', quantity: 1, color: 'Colour: Green', price: '$520.00', img: headset4, },
+      { product: 'Echo Ex', quantity: 1, color: 'Color: Yellow', price: '$600.00', img: headset7,},
+    ]);
+    const handleQuantityChange = (index, newQuantity) => {
+      setTableData((prevData) => {
+        const updatedData = [...prevData];
+        updatedData[index].quantity = Math.max(1, newQuantity); // Ensure quantity is 1 or more
+        return updatedData;
+      });
+    };
   
+
+
   const tabs = [
     { label: 'Shopping Cart', number: '1', content: <div></div> },
     { label: 'Checkout details', number: '2', content: <div></div> },
@@ -19,11 +36,20 @@ const Cartbody = () => {
   ];
   const taabs = [
     { label: 'Shopping Cart', number: '1',number2:'2', content: <div></div> },
- 
-    
-
 
   ];
+
+  const [formData, setFormData] = useState({
+   
+    coupon: '',
+  });
+        
+  
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+
 
   
   const handleClick = (label) => {
@@ -66,7 +92,52 @@ const Cartbody = () => {
         <div className='h-[543px] py-[80px] gap-[64px] flex flex-row'>
            
             <div className='w-3/5'>
-               <Table /> 
+            <div className="flex flex-col">
+      <div className="w-full overflow-hidden rounded-md shadow-sm">
+        <div className="w-full border-b-[1px] border-[#6C7275]">
+          <div className="flex px-4 py-2 text-left text-[16px] font-[600] font-inter capitalize">
+            <div className="w-1/3">Products</div>
+            <div className="w-1/3 text-center">Quantity</div>
+            <div className="w-1/3 text-right">Price</div>
+          </div>
+        </div>
+        <ul role="list" className="divide-y divide-gray-200">
+          {tableData.map((item, index) => (
+            <li key={index} className="flex px-4 py-4">
+              <div className="w-1/3 py-[24px] justify-between flex flex-row  px-[10px]">
+              <div className='w-2/5 -mt-4 '>
+              <img className='w-full h-full ' src={item.img}  alt={item.procuct} />
+              </div>
+              <div className='text-black font-inter font-[500] flex flex-col'>
+                <div className='text-[14px]'> {item.product}</div>
+                <div className='text-[8px] text-[#6C7275] flex flex-row'>{item.color}</div>
+             
+              </div>
+              </div>
+              
+                <button className='flex flex-row px-[8px] py-[4px] space-x-[16px] mt-[20px] border-[1px] border #6C7275 w-[74px] h-[30px]' >
+                <div
+                  className="mb-[]    "
+                  onClick={() => handleQuantityChange(index, item.quantity - 1)}
+                >
+                  -
+                </div>
+                <span className="mb-[] mx-2">{item.quantity}</span>
+                <div
+                  className="mb-[]   "
+                  onClick={() => handleQuantityChange(index, item.quantity + 1)}
+                >
+                  +
+                </div>
+
+                </button>
+             
+              <div className="w-1/3 py-[24px] text-right">{item.price}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
             </div>
             <div className='w-2/5'>
                 <Cartsummary />
@@ -86,6 +157,8 @@ const Cartbody = () => {
         <div className='text-[##121212] font-[500] font-inter text-[16px]'>
             Apply
         </div>
+        <label htmlFor="input" className=" text-left text-[12px]"></label>
+      
         </div>
        </div>
      </div>
@@ -125,7 +198,55 @@ const Cartbody = () => {
         </div>
     </div>
     <div className='w-full mx-[16px]' >
-               <Table /> 
+    <div className="flex flex-col">
+      <div className="w-full overflow-hidden rounded-md shadow-sm">
+        <div className="w-full border-b-[1px] border-[#6C7275]">
+          <div className="flex px-4 py-2 text-left text-[16px] font-[600] font-inter capitalize">
+            <div className="w-1/3">Products</div>
+            <div className="w-1/3 text-center">{}</div>
+            <div className="w-1/3 text-right">{}</div>
+          </div>
+        </div>
+        <ul role="list" className="divide-y divide-gray-200">
+          {tableData.map((item, index) => (
+            <li key={index} className="flex px-4 py-4">
+              <div className="w-1/3 py-[24px] justify-between flex flex-row  px-[10px]">
+              <div className='w-2/5 -mt-4 '>
+              <img className='w-full h-full ' src={item.img}  alt={item.procuct} />
+              </div>
+            
+              </div>
+          
+          <div className='flex flex-col'>
+          <div className='text-black font-inter font-[500] flex flex-col'>
+                <div className='text-[14px]'> {item.product}</div>
+                <div className='text-[8px] text-[#6C7275] flex flex-row'>{item.color}</div>
+             
+              </div>
+                          <button className='flex flex-row px-[8px] py-[4px] space-x-[16px] mt-[20px] border-[1px] border #6C7275 w-[74px] h-[30px]' >
+                <div
+                  className="mb-[]    "
+                  onClick={() => handleQuantityChange(index, item.quantity - 1)}
+                >
+                  -
+                </div>
+                <span className="mb-[] mx-2">{item.quantity}</span>
+                <div
+                  className="mb-[]   "
+                  onClick={() => handleQuantityChange(index, item.quantity + 1)}
+                >
+                  +
+                </div>
+
+                </button>
+                </div>
+                
+              <div className="w-1/3 py-[24px] text-right">{item.price}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
             </div>
      <div className='mx-[16px] w-full flex flex-col my-4'>
        <div className='font-[500] font-poppins text-[16px]'>Have a coupon?</div>

@@ -29,6 +29,7 @@ const Table = () => {
           {tableData.map((item, index) => (
             <li key={index} className="flex px-4 py-4">
               <div className="w-1/3 py-[24px]">{item.product}</div>
+              
                 <button className='flex flex-row px-[8px] py-[4px] space-x-[16px] mt-[20px] border-[1px] border #6C7275 w-[74px] h-[30px]' >
                 <div
                   className="mb-[]    "

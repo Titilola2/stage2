@@ -165,7 +165,8 @@ const Body = () => {
 {   /* large screen */          }
 <div className="hidden md:flex  flex flex-row bg-[#ECECEC]">
   <div className='w-1/3'></div>
-<div className="  flex flex-col bg-[#ECECEC] h-[360px] py-[95px]  gap-[32px] justify-center items-center ">
+<div className="  flex flex-col bg-[#ECECEC] h-[340px] py-[95px]  gap-[32px] justify-center items-center ">
+
 <div className='flex flex-col gap-[8px] text-center'>
  
          <div className='font-poppins font-[500] text-[40px]'>
@@ -179,7 +180,8 @@ const Body = () => {
          Email Adress
    </div>
 </div>
-<div className='w-1/4 mb-24]'><img src={lady} alt="lady" /></div>
+<div className='w-1/4 '><img className="h-full -mb-[24px] w-full"
+src={lady} alt="lady" /></div>
 
 </div>  
 
