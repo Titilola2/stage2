@@ -313,7 +313,7 @@ const Checkoutbody = () => {
 </div>
 
 
-<div className="w-2/5 bg-white  flex flex-col border-[1px] border-[#6C7275] rounded-[2px] h-[750px] px-[24px] py-[16px]">
+<div className="w-2/5 bg-white  flex flex-col border-[1px] border-[#6C7275] rounded-[2px] h-[800px] px-[24px] py-[16px]">
 <div className='font-poppins font-[500] text-[28px]'>Order Summary</div>
 <div className=''> 
 <div className="flex flex-col">
