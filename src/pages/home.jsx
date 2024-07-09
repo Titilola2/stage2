@@ -3,6 +3,7 @@ import Body from "../components/body";
 import Header from '../components/header';
 import Footer from '../components/footer';
 import ProductGrid from '../components/productGrid';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 const Home = () => {

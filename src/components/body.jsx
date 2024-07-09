@@ -10,6 +10,7 @@ import { IoGridSharp } from "react-icons/io5";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { PiSquareSplitVerticalFill, PiSquareSplitHorizontalFill } from "react-icons/pi";
 import lady from '../assets/lady.svg';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 
