@@ -105,9 +105,9 @@ const headsetImages = [headset, headset2, headset3, headset4, headset5, headset6
         {headsets.map((headset, index) => (
           <div key={index} className="w-[222px] h-[433px] flex flex-col">
             <div className="h-4/5">
-              <a href="/cart">
+            <a href="/cart">
                 <BasePopup className=" " id={id} open={open} anchor={anchor}>
-                  <PopupBody className='text-white w-full '>Add to Cart</PopupBody>
+                  <PopupBody className='text-white w-full ' onClick={handleClick}>Add to Cart</PopupBody>
                 </BasePopup>
               </a>
               <img className='w-full h-full' src={headset.img} onClick={handleClick} alt={headset.name} />
